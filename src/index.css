@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  img {
+    @apply inline-block;
+  }
+}
+
+.container {
+  @apply mx-20 my-10
+}
+
+.spotlight-bg {
+  background:
+    radial-gradient(circle at center, rgba(44, 70, 139, 0.8) 30%, #000000 70%),
+    linear-gradient(to bottom, #030719 0%, rgba(44, 70, 139, 0) 50%, #000000 100%);
+}
+
+.header-weight {
+  font-weight: 300;
+}
+
+.card-shadow {
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1), 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+/* 
+
+.switch {
+  --button-width: 3em;
+  --button-height: 1.5em;
+  --toggle-diameter: 1em;
+  --button-toggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
+  --toggle-shadow-offset: 10px;
+  --toggle-wider: 3em;
+  --color-grey: #cccccc;
+  --color-green: #4296f4;
+ }
+ 
+ .slider {
+  display: inline-block;
+  width: var(--button-width);
+  height: var(--button-height);
+  background-color: var(--color-grey);
+  border-radius: calc(var(--button-height) / 2);
+  position: relative;
+  transition: 0.3s all ease-in-out;
+ }
+ 
+ .slider::after {
+  content: "";
+  display: inline-block;
+  width: var(--toggle-diameter);
+  height: var(--toggle-diameter);
+  background-color: #fff;
+  border-radius: calc(var(--toggle-diameter) / 2);
+  position: absolute;
+  top: var(--button-toggle-offset);
+  transform: translateX(var(--button-toggle-offset));
+  box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+  transition: 0.3s all ease-in-out;
+ }
+ 
+ .switch input[type="checkbox"]:checked + .slider {
+  background-color: var(--color-green);
+ }
+ 
+ .switch input[type="checkbox"]:checked + .slider::after {
+  transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)));
+  box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+ }
+ 
+ .switch input[type="checkbox"] {
+  display: none;
+ }
+ 
+ .switch input[type="checkbox"]:active + .slider::after {
+  width: var(--toggle-wider);
+ }
+ 
+ .switch input[type="checkbox"]:checked:active + .slider::after {
+  transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)));
+ } */
+
+ /* From Uiverse.io by arghyaBiswasDev */ 
+/* The switch - the box around the slider */
+/* From Uiverse.io by gharsh11032000 */ 
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3em;
+  height: 1.5em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #9fccfa;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5em;
+  width: 1.5em;
+  inset: 0;
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.switch input:checked + .slider {
+  background: #0974f1;
+}
+
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #0974f1;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.6em);
+}
+
+.loader {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: block;
+  border-top: 3px solid #C9CDD5;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 

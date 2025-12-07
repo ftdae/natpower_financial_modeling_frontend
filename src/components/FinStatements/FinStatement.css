@@ -1,0 +1,38 @@
+.custom-date-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer; 
+}
+
+.custom-date-input::-webkit-calendar-picker-indicator {
+  opacity: 0; 
+  pointer-events: none; 
+}
+
+.custom-date-input::-webkit-inner-spin-button,
+.custom-date-input::-moz-inner-spin-button {
+  display: none; 
+}
+
+::-webkit-scrollbar {
+  width: 5px; 
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d7d7d4;
+  border-radius: 5px; 
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 5px; 
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: #d7d7d4; 
+  border-radius: 5px;
+}

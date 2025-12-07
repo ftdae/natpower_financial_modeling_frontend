@@ -1,0 +1,12 @@
+/* SidebarContent.css */
+.scrollbar-hidden {
+	overflow: auto; /* Allows scrolling */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+	display: none; /* Hides scrollbar for Webkit browsers */
+}
+
+.scrollbar-hidden {
+	scrollbar-width: none; /* Hides scrollbar for Firefox */
+}
