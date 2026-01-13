@@ -1,4 +1,4 @@
-/* .custom-date-input {
+.custom-date-input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -35,4 +35,4 @@
 ::-webkit-scrollbar-thumb:horizontal {
   background-color: #d7d7d4; 
   border-radius: 5px;
-} */
+}
