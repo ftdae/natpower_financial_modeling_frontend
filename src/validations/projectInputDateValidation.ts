@@ -1,20 +1,20 @@
-export const minValueForBasicInputs = (
-  itemId: string,
-  basicProjectInputs: { [key: string]: string | null }
-): string | undefined => {
-  const keys = Object.keys(basicProjectInputs);
-  const currentItemIndex = keys.findIndex((input) => input === itemId);
+// export const minValueForBasicInputs = (
+//   itemId: string,
+//   basicProjectInputs: { [key: string]: string | null }
+// ): string | undefined => {
+//   const keys = Object.keys(basicProjectInputs);
+//   const currentItemIndex = keys.findIndex((input) => input === itemId);
 
-  if (currentItemIndex === 0) return undefined;
+//   if (currentItemIndex === 0) return undefined;
 
-  for (let i = currentItemIndex - 1; i >= 0; i--) {
-    if (basicProjectInputs[keys[i]]) {
-      return basicProjectInputs[keys[i]]!;
-    }
-  }
+//   for (let i = currentItemIndex - 1; i >= 0; i--) {
+//     if (basicProjectInputs[keys[i]]) {
+//       return basicProjectInputs[keys[i]]!;
+//     }
+//   }
 
-  return undefined;
-};
+//   return undefined;
+// };
 
 export const maxValueForBasicInputs = (
   itemId: string,
