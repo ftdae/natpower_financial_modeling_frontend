@@ -34,22 +34,22 @@ export const maxValueForBasicInputs = (
   return undefined;
 };
 
-// export const validateOnBlur = (
-//   inputDate: string,
-//   itemId: string,
-//   basicProjectInputs: { [key: string]: string | null },
-//   onChange: Function
-// ): string | undefined => {
-//   const minValue = minValueForBasicInputs(itemId, basicProjectInputs);
-//   const maxValue = maxValueForBasicInputs(itemId, basicProjectInputs);
+export const validateOnBlur = (
+  inputDate: string,
+  itemId: string,
+  basicProjectInputs: { [key: string]: string | null },
+  onChange: Function
+): string | undefined => {
+  const minValue = minValueForBasicInputs(itemId, basicProjectInputs);
+  const maxValue = maxValueForBasicInputs(itemId, basicProjectInputs);
 
-//   if (minValue && inputDate < minValue) {
-//     onChange(itemId, minValue);
-//     return;
-//   }
+  if (minValue && inputDate < minValue) {
+    onChange(itemId, minValue);
+    return;
+  }
 
-//   if (maxValue && inputDate > maxValue) {
-//     onChange(itemId, maxValue);
-//     return;
-//   }
-// };
+  if (maxValue && inputDate > maxValue) {
+    onChange(itemId, maxValue);
+    return;
+  }
+};
