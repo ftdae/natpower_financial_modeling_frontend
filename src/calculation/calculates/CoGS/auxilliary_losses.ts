@@ -85,27 +85,27 @@ export function calcAuxilliaryLosses({
     (d) => d?.providerName == revenueSetup.forecastProviderChoice
   )?.data;
 
-  // const tempinflationAdjustmentFactor = calcInflationAdjustmentFactor({
-  //   inflationInputs,
-  //   providerInflationProfile: selectedAssumptionsData?.inflation as string,
-  //   providerBaseYear: selectedAssumptionsData?.baseYear as number,
-  //   projectInflationProfile: revenueSetup.inflation,
-  //   projectBaseYear: revenueSetup.baseYear,
-  // });
-  // // calcs 15.02 Project inflation to use in financial model ~~~ Inflation adjustment factor row 2378
-  // const inflationAdjustmentFactor = normalizeArray(
-  //   annualIndexToMonths(tempinflationAdjustmentFactor),
-  //   period
-  // );
+  const tempinflationAdjustmentFactor = calcInflationAdjustmentFactor({
+    inflationInputs,
+    providerInflationProfile: selectedAssumptionsData?.inflation as string,
+    providerBaseYear: selectedAssumptionsData?.baseYear as number,
+    projectInflationProfile: revenueSetup.inflation,
+    projectBaseYear: revenueSetup.baseYear,
+  });
+  // calcs 15.02 Project inflation to use in financial model ~~~ Inflation adjustment factor row 2378
+  const inflationAdjustmentFactor = normalizeArray(
+    annualIndexToMonths(tempinflationAdjustmentFactor),
+    period
+  );
 
-  // // calcs 17.04 Auxiliary losses ~~~ Quarterly cost ~~~ Import price row 2558
-  // const importPrice = multiplyArrays([
-  //   normalizeArrayBySeasonality(
-  //     multiplyNumber(averageWholeSaleDayAheadPrice, 1),
-  //     period
-  //   ),
-  //   inflationAdjustmentFactor,
-  // ]);
+  // calcs 17.04 Auxiliary losses ~~~ Quarterly cost ~~~ Import price row 2558
+  const importPrice = multiplyArrays([
+    normalizeArrayBySeasonality(
+      multiplyNumber(averageWholeSaleDayAheadPrice, 1),
+      period
+    ),
+    inflationAdjustmentFactor,
+  ]);
 
   // calcs 17.04 Auxiliary losses ~~~ Quarterly cost ~~~ Auxiliary loss factor row 2559
   const auxilliaryLossFactor =
