@@ -63,16 +63,16 @@ export function calcMetering({
     )
   );
 
-  // const capacity = initialCapacity;
+  const capacity = initialCapacity;
 
-  // const annualCost =
-  //   meteringSettings.annualCost?.find(
-  //     (d) => d.duration == startingAssumptionsForBatteries.batteryDuration
-  //   )?.annualCostPerMW || 0;
-  // const costPerMonth = ((1 + opexSensitivity) * annualCost * capacity) / 4;
+  const annualCost =
+    meteringSettings.annualCost?.find(
+      (d) => d.duration == startingAssumptionsForBatteries.batteryDuration
+    )?.annualCostPerMW || 0;
+  const costPerMonth = ((1 + opexSensitivity) * annualCost * capacity) / 4;
 
-  // const metering = operationsAsAPercentOfPeriod.map(
-  //   (d, index) => -d * indexValue[index] * costPerMonth
-  // );
+  const metering = operationsAsAPercentOfPeriod.map(
+    (d, index) => -d * indexValue[index] * costPerMonth
+  );
   return addZeros(roundArray(metering, 10), period);
 }
